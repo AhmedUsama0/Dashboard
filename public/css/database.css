@@ -1,0 +1,160 @@
+:root {
+  --green: #1aad49;
+  --gray: #f0f5f4;
+  --lightGreen: #f0f5f4;
+  --midGreen: #a3dcaa;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+/* body:before {
+  content: "";
+  background-color: #f5f5f5;
+  position: absolute;
+  transform: skewX(10deg);
+  transform-origin: top left;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+} */
+
+.container {
+  max-width: 1500px;
+}
+
+.dashboard {
+  box-shadow: 5px 5px 4px 5px rgb(0 0 0 / 20%);
+  min-height: 700px;
+  border-radius: 20px;
+}
+
+.container .dashboard .school {
+  min-height: 700px;
+  border-right: 2px solid var(--gray);
+  background-color: #f2f1f2;
+  border-radius: 20px 0 0 20px;
+}
+
+.container .dashboard .school ul {
+  list-style-type: none;
+  margin-top: 100px;
+}
+
+.container .dashboard .school ul li {
+  position: relative;
+  width: fit-content;
+}
+.container .dashboard .school ul li:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0%;
+  width: 2px;
+  background-color: var(--green);
+  transition: height 0.4s ease-in-out;
+}
+.container .dashboard .school ul li:hover:before {
+  height: 100%;
+}
+/* we make this for appearnce only but it is not practical */
+.container .dashboard .school ul li:nth-child(4):before {
+  height: 100%;
+}
+
+.container .dashboard .school ul li:nth-child(4),
+.container .dashboard .school ul li:hover {
+  color: var(--green) !important;
+}
+
+.container .dashboard .database input {
+  border: none;
+  border-bottom: 2px solid var(--midGreen);
+  outline: none;
+}
+.container .dashboard .database .line {
+  display: block;
+  position: relative;
+  bottom: 2px;
+  background-color: var(--green);
+  width: 0;
+  height: 2px;
+  transition: width 0.4s ease-in-out;
+}
+.container .dashboard .database input:focus ~ .line {
+  width: 50%;
+}
+
+.container .dashboard .database ul {
+  list-style-type: none;
+  border-bottom: 2px solid var(--gray);
+}
+
+.container .dashboard .database ul li {
+  font-size: 18px;
+  position: relative;
+}
+
+.container .dashboard .database ul li:before {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  background-color: var(--green);
+  width: 0%;
+  height: 1px;
+  transition: width 0.4s ease-in-out;
+}
+
+.container .dashboard .database ul li:hover:before {
+  width: 100%;
+}
+
+.container .dashboard .database ul li:hover {
+  color: var(--green) !important;
+}
+.green {
+  color: var(--green) !important;
+  border-bottom: 1px solid var(--green);
+}
+
+.container .dashboard .database .database-content {
+  height: 500px;
+}
+.container .dashboard .database .database-content .user-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.container .dashboard .database table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.container .dashboard .database td,
+th {
+  padding: 10px;
+}
+.container .dashboard .database tr:nth-child(even) {
+  background-color: var(--lightGreen);
+}
+
+.container .dashboard .database tr:not(:first-child):hover {
+  background-color: var(--midGreen);
+}
+
+.container .dashboard .database tr:not(:first-child) {
+  cursor: pointer;
+}
+
+.container .dashboard .user-info {
+  border-left: 2px solid var(--gray);
+  background-color: #9c9fa7;
+  border-radius: 0 20px 20px 0;
+}
